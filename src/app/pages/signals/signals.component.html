@@ -1,0 +1,24 @@
+<div class="container">
+    <h3>Working with signals</h3>
+    
+    @if(people?.people) {
+        <table>
+            <tbody>
+                @for (people of people?.people; track $index) {
+                    <tr>
+                        <td>{{ people.first_name }}</td>
+                        <td>{{ people.last_name }}</td>
+                        <td>{{ people.email }}</td>
+                        <td><img [src]="people.avatar" alt=""></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+
+    <div>
+        <button (click)="goToPage(-1)">Prev page</button>
+        <button (click)="goToPage(+1)">Next page</button>
+    </div>
+</div>
